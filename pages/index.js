@@ -14,7 +14,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          <a href="https://github.com/JuanDiazDev">X</a>
+          Random <a href="https://github.com/JuanDiazDev">X</a>
         </h1>
 
         <Parts></Parts>

@@ -39,7 +39,7 @@ export default function Parts() {
             </form>
 
             <div className="card">
-                <h3>SORTEADOS</h3>
+                <h3>SORTEADO(S)</h3>
                 {winners.map((name) => (
                     <p key = "win" className="font-names">{name}</p>
                 ))}
