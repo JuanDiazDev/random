@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
 html,
 body {
   padding: 0;
@@ -13,4 +15,50 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.font-names {
+  font-family: 'Staatliches', cursive;
+}
+
+.form-control {
+  padding:10px;
+  border:0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  width: 100%;
+}
+
+.button-31 {
+  background-color: #222;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  border-radius: 3%;
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
 }
