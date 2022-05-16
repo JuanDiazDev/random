@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Sorteos</title>
+        <title>Titea2</title>
         <meta name="description" content="Sorteos" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
