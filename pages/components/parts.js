@@ -8,7 +8,7 @@ export default function Parts() {
     function handleSubmit(event){
         event.preventDefault();
         const new_parts = names.split("\n");
-        pick(number, new_parts);
+        setWinners(pick(number, new_parts));
     };
 
     function handleChange(event){
@@ -22,19 +22,22 @@ export default function Parts() {
     };
 
     function pick(n, parts){
-            // Shuffle array
+        // Shuffle array
+        const prueba = {'Elena':0, 'Juan': 0, 'Emiliano': 0};
         const shuffled = parts.sort(() => 0.5 - Math.random());
 
         // Get sub-array of first n elements after shuffle
         let selected = shuffled.slice(0, n);
-        setWinners(selected);
+
+        return selected;
     };
 
     return (
         <div>
+            
             <form onSubmit = {handleSubmit}>
-                <textarea className="form-control" rows="4"  onChange = {handleChange}></textarea>
-                <input type="number" className = "form-control" onChange = {handleChangeNumber}/>
+                <textarea className="form-control" rows="4" placeholder="Participantes" onChange = {handleChange}></textarea>
+                <input type="number" className = "form-control" placeholder = '0' onChange = {handleChangeNumber}/>
                 <button className = "button-31" type="submit" value="Submit">GO</button>
             </form>
 
