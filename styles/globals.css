@@ -24,7 +24,7 @@ a {
 .form-control {
   padding:10px;
   border:0;
-  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   width: 100%;
 }
 
@@ -52,6 +52,25 @@ a {
   -webkit-user-select: none;
   touch-action: manipulation;
   width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3%;
+}
+
+.button-31:focus-visible {
+  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+  transition: box-shadow .2s;
+}
+
+.button-31:active {
+  border-color: #000000;
+  transform: scale(.96);
+}
+
+.button-31:disabled {
+  border-color: #DDDDDD;
+  color: #DDDDDD;
+  cursor: not-allowed;
+  opacity: 1;
 }
 
 .card {
@@ -62,3 +81,6 @@ a {
   font-size: 20px;
   background-color: rgba(255, 255, 255, 0.3);
 }
+
+
+
