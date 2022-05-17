@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Days+One&family=Staatliches&display=swap');
+
+
 .container {
   padding: 0 2rem;
 }
@@ -29,15 +32,11 @@
 }
 
 .title a {
-  color: #0070f3;
+  color: #3585e0;
   text-decoration: none;
+  font-family: 'Days One', sans-serif;
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
 
 .title {
   margin: 0;
