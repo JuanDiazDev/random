@@ -16,9 +16,9 @@ export default function Home() {
       <main className={styles.main}>
         <Image src={Tita} alt = "Tita" width={200} height={200}/>
 
-        <h1 className={styles.title}>
-          <a href = 'https://www.youtube.com/watch?v=9KmhitKJlrA' target="_blank" rel="noopener noreferrer" >X</a>
-        </h1>
+        <h2 className={styles.title}>
+          <a href = 'https://www.youtube.com/watch?v=9KmhitKJlrA' target="_blank" rel="noopener noreferrer" >titea2</a>
+        </h2>
 
         <Parts></Parts>
 
