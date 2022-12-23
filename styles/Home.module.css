@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Days+One&family=Staatliches&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@700&display=swap');
 
 .container {
   padding: 0 2rem;
@@ -32,9 +31,9 @@
 }
 
 .title a {
-  color: #3585e0;
+  color: #2381d8;
   text-decoration: none;
-  font-family: 'Days One', sans-serif;
+  font-family: 'Passion One';
 }
 
 

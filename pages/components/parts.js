@@ -1,14 +1,35 @@
 import React from "react";
+import {Tabs, Tab } from '@mui/material';
+import Looks4Icon from '@mui/icons-material/Looks4';
+import PersonIcon from '@mui/icons-material/Person';
+import GroupIcon from '@mui/icons-material/Group';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+import { FormControl, TextField, Button, Card, ListItem, ListItemText, ListItemAvatar, Avatar} from '@mui/material';
+import Box from '@mui/material/Box';
+import { Winners } from "./winners";
+
+
+const FUNCIONES = {'normal': 'Normal', 'equipos': 'Equipos', 'numeros': 'Numeros'};
 
 export default function Parts() {
-    const [winners, setWinners] = React.useState([]);
+    const [winnersNames, setWinnersNames] = React.useState([]);
     const [names, setNames] = React.useState('');
     const [number, setNumber] = React.useState(0);
+    const [numeroSorteo, setNumeroSorteo] = React.useState(1);
+    const [activeTab, setActiveTab] = React.useState(0)
+
+    function createArray(n){
+        const foo = [];
+        for (var i = 1; i <= n; i++) {
+            foo.push(i);
+        }
+        return foo;
+    }
 
     function handleSubmit(event){
         event.preventDefault();
-        const new_parts = names.split("\n");
-        setWinners(pick(number, new_parts));
+        const new_parts = activeTab === 2 ? createArray(numeroSorteo) : names.split("\n");
+        setWinnersNames(pick(activeTab === 1 ? names.length : number, new_parts.map(e => e.toString())));
     };
 
     function handleChange(event){
@@ -21,12 +42,20 @@ export default function Parts() {
         setNumber(event.target.value);
     };
 
+    function handleChangeNumeroSorteo(event){
+        event.preventDefault();
+        setNumeroSorteo(event.target.value);
+    };
+
+    function handleChangeTab(event, newActiveTab){
+        setWinnersNames([])
+        setActiveTab(newActiveTab);
+    }
+
     function pick(n, parts){
-        // Shuffle array
-        const prueba = {'Elena':0, 'Juan': 0, 'Emiliano': 0};
+
         const shuffled = parts.sort(() => 0.5 - Math.random());
 
-        // Get sub-array of first n elements after shuffle
         let selected = shuffled.slice(0, n);
 
         return selected;
@@ -34,21 +63,30 @@ export default function Parts() {
 
     return (
         <div>
-            
-            <form onSubmit = {handleSubmit}>
-                <textarea className="form-control" rows="4" placeholder="Participantes" onChange = {handleChange}></textarea>
-                <input type="number" className = "form-control" placeholder = '0' onChange = {handleChangeNumber}/>
-                <button className = "button-31" type="submit" value="Submit">GO</button>
-            </form>
+            <Box>
+            <Tabs value={activeTab} onChange={handleChangeTab} sx={{paddingBottom: '9px'}} textColor="primary.dark" centered>
+  <Tab icon = {<PersonIcon/>} label={FUNCIONES.normal}/>
+  <Tab icon = {<GroupIcon/>} label={FUNCIONES.equipos} />
+  <Tab icon = {<Looks4Icon/>} label={FUNCIONES.numeros}/>
+</Tabs>
+</Box>
+<FormControl fullWidth onSubmit = {handleSubmit}
+>
+{activeTab !== 2 ? <TextField 
+          id="outlined-textarea"
+          label="Participantes"
+          variant="outlined"
+          onChange = {handleChange}
+          color = "primary"
+          multiline
+        /> : <TextField onChange = {handleChangeNumeroSorteo} type="number" size="small" placeholder = '100'/>}
+        <TextField onChange = {handleChangeNumber} type="number" size="small" placeholder = '0'/>
+        <Button variant="contained" onClick = {handleSubmit} color = "primary" endIcon={<RocketLaunchIcon />}>
+  sortear
+</Button>
 
-            <div className="card">
-                <h3>SORTEADO(S)</h3>
-                {winners.map((name) => (
-                    <p key = "win" className="font-names">{name}</p>
-                ))}
-            </div>     
+</FormControl>
+           <Winners winners={winnersNames} equipos={activeTab === 1 ? number : 0}/>
         </div>
     );
 }
-
-//<button class="button-31" role="button">Button 31</button>
