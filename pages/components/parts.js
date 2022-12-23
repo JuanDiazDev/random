@@ -6,7 +6,7 @@ import GroupIcon from '@mui/icons-material/Group';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import { FormControl, TextField, Button, Card, ListItem, ListItemText, ListItemAvatar, Avatar} from '@mui/material';
 import Box from '@mui/material/Box';
-import { Winners } from "./winners";
+import Winners from "./winners";
 
 
 const FUNCIONES = {'normal': 'Normal', 'equipos': 'Equipos', 'numeros': 'Numeros'};
