@@ -55,7 +55,7 @@ const esAngel = (name) => {
                     return NOMBRES.empty
                 };
 
-export function Winners({winners, equipos}) {
+export default function Winners({winners, equipos}) {
     const coloresAleatorio = COLORES.sort(() => 0.5 - Math.random())
    return (<Card>
                 {Array.isArray(winners) && winners.length > 0 ? winners.map((name, index) => {
